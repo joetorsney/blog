@@ -1,11 +1,4 @@
-<Head>
-    <title>Joseph Torsney</title>
-    <meta name="description" content="Joseph Torsney" />
-    <link rel="icon" href="/favicon.ico" />
-</Head>
-
 import Head from 'next/head';
-
 
 interface Props {
   title?: string;
