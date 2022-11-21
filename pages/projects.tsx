@@ -10,7 +10,9 @@ interface ProjectPageProps {
 
 const Projects = (props: ProjectPageProps) => (
   <Layout>
-    <article dangerouslySetInnerHTML={{__html: props.content}} />
+    <div className="flex justify-center">
+      <article className='prose lg:prose-lg prose-p:text-justify' dangerouslySetInnerHTML={{__html: props.content}} />
+    </div>
   </Layout>
 )
 
@@ -25,4 +27,4 @@ export async function getStaticProps() {
   }
 }
 
-export default Projects;``
+export default Projects;
