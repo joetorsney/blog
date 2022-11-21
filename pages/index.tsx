@@ -16,10 +16,10 @@ export default function Home() {
           </div>
         </div>
         <div>
-          <h1 className='text-center text-3xl font-bold py-4 '>Hello, I'm Joseph Torsney</h1>
+          <h1 className='text-center text-3xl font-bold py-4'>Hello, I&apos;m Joseph Torsney</h1>
           <p className='text-justify'>
             A final year masters student of Computer Science at The University of Sheffield.
-            I'm currently working on a research project using advanced machine learning techniques for singing voice conversion.
+            I&apos;m currently working on a research project using advanced machine learning techniques for singing voice conversion.
             I helped develop and currently maintain {" "}
             <Link href='http://www.africainscience.org' className='text-green-600 underline'>Africa in Science</Link>, 
             an online platform that tracks the research output of African institutes.
