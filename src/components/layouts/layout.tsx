@@ -1,7 +1,6 @@
 import React from "react"
 import Nav from "../../nav";
 import Footer from "../footer";
-import { SEO } from "../SEO";
 
 interface Props {
   children: React.ReactNode;

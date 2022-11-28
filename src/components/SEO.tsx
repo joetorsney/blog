@@ -10,7 +10,7 @@ const SEO = (props: Props) => {
   return (
     <Head>
       <title>
-        {title ? `${title} |` : ''} Joseph Torsney
+        {(title ? `${title} | ` : '') + "Joseph Torsney"}
       </title>
     </Head>
   );
