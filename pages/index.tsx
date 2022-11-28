@@ -25,11 +25,9 @@ export default function Home() {
             an online platform that tracks the research output of African institutes.
             <br />
             <br />    
-            This website is currently under construction, but you will be able to find my {" "}
-            <Link href='projects' className='text-green-600 underline'>projects</Link>, and my {" "}
-            <Link href='blog' className='text-green-600 underline'>blog</Link> soon. For now, see my {" "}
-            <Link href='http://github.com/joetorsney' className='text-green-600 underline'>github</Link> or {" "}
-            <Link href='https://www.linkedin.com/in/joseph-torsney-788345195/' className='text-green-600 underline'>linkedin</Link>
+            On this website you can find my {" "}
+            <Link href='projects' className='text-green-600 underline'>projects</Link>. When I find something interesting to write about, you will find it on my {" "}
+            <Link href='blog' className='text-green-600 underline'>blog</Link>.  
           </p>
         </div>
       </div>
