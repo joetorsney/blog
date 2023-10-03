@@ -18,14 +18,14 @@ export default function Home() {
         <div>
           <h1 className='text-center text-3xl font-bold py-4'>Hello, I&apos;m Joseph Torsney</h1>
           <p className='text-justify'>
-            A final year masters student of Computer Science at The University of Sheffield.
-            I&apos;m currently working on a research project using advanced machine learning techniques for singing voice conversion.
+            A Masters of Computer Science graduate at from The University of Sheffield.
+            I recently completed a summer internship at <Link href='cern.ch' className='text-green-600 underline'>CERN</Link>, where I worked on a full stack web development project on the ALICE experiment.
             I helped develop and currently maintain {" "}
             <Link href='http://www.africainscience.org' className='text-green-600 underline'>Africa in Science</Link>, 
             an online platform that tracks the research output of African institutes.
             <br />
             <br />    
-            On this website you can find my {" "}
+            I give more details about these on my {" "}
             <Link href='projects' className='text-green-600 underline'>projects</Link>. When I find something interesting to write about, you will find it on my {" "}
             <Link href='blog' className='text-green-600 underline'>blog</Link>.  
           </p>
