@@ -8,4 +8,5 @@ This site serves two main purposes: to showcase things I do, and to be a space t
 
 ## Todo List
 - Enable switching between light and dark theme.
+- Button to download my CV
 - Add an area for public obsidian notes. See [learn in public](https://www.swyx.io/learn-in-public)
