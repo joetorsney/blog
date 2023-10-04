@@ -6,6 +6,7 @@ const Nav = () => (
       <Link href='/'>🏠</Link>
     </div>
     <div className="[&>*]:mx-2 [&>*]:p-2">
+      <Link href='about' className='text-green-600 hover:border-b-2'>ℹ️ About</Link>
       <Link href='projects' className='text-green-600 hover:border-b-2'>🛠️ Projects & Experience</Link>
       <Link href='blog' className='text-green-600 hover:border-b-2 '>✏️ Blog</Link>
     </div>
