@@ -11,7 +11,7 @@ interface ProjectPageProps {
 
 const Projects = (props: ProjectPageProps) => (
   <Layout>
-    <SEO title='Projects'/>
+    <SEO title='Projects & Experience'/>
     <div className="flex justify-center">
       <article className='prose lg:prose-lg prose-p:text-justify' dangerouslySetInnerHTML={{__html: props.content}} />
     </div>
