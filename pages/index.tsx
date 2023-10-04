@@ -19,7 +19,9 @@ export default function Home() {
           <h1 className='text-center text-3xl font-bold py-4'>Hello, I&apos;m Joseph Torsney</h1>
           <p className='text-justify'>
             A Masters of Computer Science graduate at from The University of Sheffield.
-            I recently completed a summer internship at <Link href='cern.ch' className='text-green-600 underline'>CERN</Link>, where I worked on a full stack web development project on the ALICE experiment.
+            I recently completed a summer internship at <Link href='cern.ch' className='text-green-600 underline'>CERN</Link>, 
+            where I worked on a full stack web development project on the ALICE experiment, and published a {" "}
+            <Link href='http://cds.cern.ch/record/2873559?ln=en' className='text-green-600 underline'>report</Link> about my contributions.
             I helped develop and currently maintain {" "}
             <Link href='http://www.africainscience.org' className='text-green-600 underline'>Africa in Science</Link>, 
             an online platform that tracks the research output of African institutes.
