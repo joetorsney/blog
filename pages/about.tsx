@@ -13,7 +13,7 @@ const About = (props: ProjectPageProps) => (
   <Layout>
     <SEO title='About & Experience'/>
     <div className="flex justify-center">
-      <article className='prose lg:prose-lg prose-p:text-justify' dangerouslySetInnerHTML={{__html: props.content}} />
+      <article className='prose lg:prose-lg prose-p:text-justify prose-p:text-white prose-invert' dangerouslySetInnerHTML={{__html: props.content}} />
     </div>
   </Layout>
 )

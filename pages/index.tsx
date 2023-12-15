@@ -10,30 +10,19 @@ export default function Home() {
     <Layout>
       <SEO title='Home'/>
       <div>
-        <div className='flex justify-center'>
-          <div className='w-1/2 md:w-1/3 relative aspect-square h-auto overflow-hidden border rounded-full'>
-            <Image src={profilePic} alt='A picture of me' layout='fill'/>
+        <div className='md:flex items-center gap-8 flex-row-reverse'>
+          <div className='max-md:flex justify-center'>
+            <div className='max-w-md max-md:w-1/2 relative aspect-square h-auto overflow-hidden border-0 border-transparent rounded-3xl'>
+              <Image src={profilePic} alt='A picture of me' layout='responsive'/>
+            </div>
+          </div>
+          <div className='justify'>
+            <h1 className='justify font-medium text-3xl text-secondary py-2'><span>Hello, I&apos;m</span><span className='font-serif-italic'> Joseph Torsney</span></h1>
+            <h1 className='justify text-2xl py-2'>I am a Masters of Computer Science Graduate with 2 years professional experience</h1>
+            <h1 className='justify text-2xl py-2'>I am interested in <span className='font-mono'>Full Stack Web Development</span></h1>
           </div>
         </div>
-        <div>
-          <h1 className='text-center text-3xl font-bold py-4'>Hello, I&apos;m Joseph Torsney</h1>
-          <p className='text-justify'>
-            A Masters of Computer Science graduate at from The University of Sheffield.
-            I recently completed a summer internship at <Link href='cern.ch' className='text-green-600 underline'>CERN</Link>, 
-            where I worked on a full stack web development project on the ALICE experiment, and published a {" "}
-            <Link href='http://cds.cern.ch/record/2873559?ln=en' className='text-green-600 underline'>report</Link> about my contributions.
-            I helped develop and currently maintain {" "}
-            <Link href='http://www.africainscience.org' className='text-green-600 underline'>Africa in Science</Link>, 
-            an online platform that tracks the research output of African institutes.
-            <br />
-            <br />    
-            I give more details about these on my {" "}
-            <Link href='projects' className='text-green-600 underline'>projects</Link>. When I find something interesting to write about, you will find it on my {" "}
-            <Link href='blog' className='text-green-600 underline'>blog</Link>.  
-          </p>
-        </div>
       </div>
-
     </Layout>
   )
 }
