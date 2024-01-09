@@ -24,12 +24,3 @@ this didn't offer the flexibility we wanted.
 ## Year in Industry - Scientific Software Developer at ISIS Neutron and Muon source
 
 The [ISIS Neutron and Muon source](https://www.isis.stfc.ac.uk/Pages/home.aspx) is a particle physics facility in Harwell UK, managed by the Science Technology and Facilities Council (STFC). I joined the [Mantid Project](https://www.mantidproject.org/) as a Scientific Software Developer. The Mantid Project, to quote their site, *"provides tools to support the processing of material science data"*, such as that collected at ISIS. I worked on GUI features in Python and C++. Once such feature involved implementing an Observer pattern to enable plots showing 3D data to dynamically update when their data is changed elsewhere. I beta tested this features with users to ensure the behaviour was correct, and to discover bugs (we know users use software in ways you don't expect!). During this, I discovered a bug related to deadlocking between threads. I raised this as a ticket on github and fixed the issue before the next release. As well as this, I participated in all aspects of the development pipeline including sprint planning, CI/CD, and reviewing other developers' work on github.
-
-## 3D Graphics Assignment (University Coursework)
-
-This University module covered foundational topics in 3D computer graphics. The assignment was to create an animated scene in which a robot 
-is exploring a museum with different artifacts. We used the OpenGL API for Java. This assignment was one of my favourites because it required 
-bringing together and solving lots of differet problems. Notably creating and manipulating 3D models in the scene graph, writing shaders to simulate 
-lighting effects, and creating data structures to manage the animations. I finished this module feeling inspired and I have some project ideas I'll get back to someday!
-
-<!-- Todo: link to video -->

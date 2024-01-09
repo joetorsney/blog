@@ -32,7 +32,7 @@ interface Props {
 }
 
 const Layout = ({ children }: Props) => (
-  <div className={`${ibm.variable} ${rubik.variable} ${libre_baskerville.variable} font-sans max-w-5xl mx-auto px-4 sm:px-6 flex flex-col h-screen justify-between`}>
+  <div className={`${ibm.variable} ${rubik.variable} ${libre_baskerville.variable} font-sans max-w-4xl mx-auto px-4 sm:px-6 flex flex-col h-screen justify-between`}>
     <Nav />
     <main className="mb-auto">{children}</main>
     <Footer />
