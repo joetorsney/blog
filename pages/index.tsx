@@ -57,7 +57,7 @@ export default function Home() {
             <h1 className='text-2xl py-2'>I am a Masters of Computer Science Graduate with 1-2 years professional experience.</h1>
             <h1 className='text-2xl py-2'>
               I am primarily interested in 
-              <Typewriter text={interests[currentInterestIndex]} cursor={'_'} delay={100} pause={2000} doneCallback={changeInterest}></Typewriter>
+              <Typewriter text={interests[currentInterestIndex]} cursor={'▊'} delay={100} pause={2000} doneCallback={changeInterest}></Typewriter>
             </h1>
             {/* <span className='font-mono underline'>Full Stack Web Development</span> */}
           </div>

@@ -34,7 +34,7 @@ interface Props {
 const Layout = ({ children }: Props) => (
   <>
     <div className="fixed left-0 top-0 -z-10 h-full w-full">
-      <div className="-z-10 h-full w-full bg-primary bg-gradient-to-t from-black"></div>
+      <div className="-z-10 h-full w-full bg-gradient-to-t from-primary to-blue-900"></div>
     </div>
     <div className={`${ibm.variable} ${rubik.variable} ${libre_baskerville.variable} font-sans max-w-4xl mx-auto px-4 sm:px-6 flex flex-col h-screen justify-between`}>
       <Nav />
