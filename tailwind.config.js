@@ -14,7 +14,16 @@ module.exports = {
         'sans': ['var(--font-ibm)'],
         'serif-italic': ['var(--font-libre-italic)'],
         'logo': ['var(--font-rubik)'],
-      }
+      },
+      keyframes: {
+        blink: {
+          '0%, 100%': {opacity: 1},
+          '50%': {opacity: 0}
+        }
+      },
+      animation: {
+        blink: 'blink 0.5s infinite'
+      },
     }
   },
   plugins: [

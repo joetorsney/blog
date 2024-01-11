@@ -1,7 +1,7 @@
 @tailwind base;
 @layer base {
     html {
-        @apply text-primary-light bg-primary
+        @apply text-primary-light
     }
 }
 @tailwind components;
