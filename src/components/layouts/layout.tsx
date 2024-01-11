@@ -1,4 +1,5 @@
 import { IBM_Plex_Sans, Rubik, Libre_Baskerville } from 'next/font/google'
+import { Analytics } from '@vercel/analytics/react';
 
 const ibm = IBM_Plex_Sans({
   weight: ['400', '500', '600', '700'],
@@ -41,6 +42,7 @@ const Layout = ({ children }: Props) => (
       <main className="">{children}</main>
       <Footer />
     </div>
+    <Analytics />
   </>
 )
 
