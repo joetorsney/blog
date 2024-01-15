@@ -12,10 +12,11 @@ interface TypewriterProps {
     cursor: string,
     delay: number,
     pause: number,
-    doneCallback: () => void
+    doneCallback: () => void,
+    className?: string
 }
 
-const Typewriter = ({text, cursor, delay, pause, doneCallback}: TypewriterProps) => {
+const Typewriter = ({text, cursor, delay, pause, doneCallback, className}: TypewriterProps) => {
     const [typingDirection, setTypingDirection] = useState(direction.Forward)
     const [isTyping, setIsTyping] = useState(true)
     const [currentText, setCurrentText] = useState(text)
@@ -63,9 +64,8 @@ const Typewriter = ({text, cursor, delay, pause, doneCallback}: TypewriterProps)
 
     return (
         <>
-            <br />
-            <span className='font-mono'>{currentText}</span>
-            <span className={`${!isTyping ? 'animate-blink' : ''}`}>{cursor}</span>
+            <span className={className}>{currentText}</span>
+            <span className={`${className + (!isTyping ? ' animate-blink' : '')}`}>{cursor}</span>
         </>
     )
 }

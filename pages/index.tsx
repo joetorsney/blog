@@ -45,7 +45,7 @@ export default function Home() {
   return (
     <Layout>
       <SEO title='Home'/>
-      <div className='flex flex-col gap-20'>
+      <div className='flex flex-col gap-10 md:gap-20'>
         <div className='md:flex items-center gap-8 flex-row-reverse'>
           <div className='max-md:flex justify-center'>
             <div className='max-w-md max-md:w-1/2 relative aspect-square h-auto overflow-hidden border-0 border-transparent rounded-[40px]'>
@@ -53,13 +53,13 @@ export default function Home() {
             </div>
           </div>
           <div>
-            <h1 className='font-medium text-4xl text-secondary max-md:pt-20 py-2'><span>Hello, I&apos;m</span><span className='font-serif-italic'> Joseph Torsney</span></h1>
-            <h1 className='text-2xl py-2'>I am a Masters of Computer Science Graduate with 1-2 years professional experience.</h1>
-            <h1 className='text-2xl py-2'>
+            <h1 className='font-medium text-4xl text-secondary max-sm:pt-10 max-md:pt-20 py-2'><span>Hello, I&apos;m</span><span className='font-serif-italic'> Joseph Torsney</span></h1>
+            <h1 className='text-xl sm:text-2xl py-2'>I am a Masters of Computer Science Graduate with 1-2 years professional experience.</h1>
+            <h1 className='text-xl sm:text-2xl py-2'>
               I am primarily interested in 
-              <Typewriter text={interests[currentInterestIndex]} cursor={'▊'} delay={100} pause={2000} doneCallback={changeInterest}></Typewriter>
+              <br />
             </h1>
-            {/* <span className='font-mono underline'>Full Stack Web Development</span> */}
+            <Typewriter text={interests[currentInterestIndex]} cursor={'▊'} delay={100} pause={2000} doneCallback={changeInterest} className='font-mono text-xl sm:text-2xl'></Typewriter>
           </div>
         </div>
         <div>
@@ -71,7 +71,7 @@ export default function Home() {
                 <Timeline.Content>
                   <Timeline.Time className='text-white font-bold py-1'>{item.time}</Timeline.Time>
                   <Timeline.Body>
-                    <h3 className='text-white text-2xl font-semibold py-1'>{item.title}</h3>
+                    <h3 className='text-white text-xl sm:text-2xl font-semibold py-1'>{item.title}</h3>
                     {item.subtitle ? <h3 className='text-white text-lg font-semibold py-1'>{item.subtitle}</h3> : ''}
                     <p className='text-white text-justify py-1'>{item.body}</p>
                   </Timeline.Body>
