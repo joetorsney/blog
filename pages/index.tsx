@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import Layout from '../src/components/layouts/layout'
 import Typewriter from '../src/components/typewriter'
 import { SEO } from '../src/components/SEO'
@@ -6,8 +7,34 @@ import { Timeline } from 'flowbite-react'
 
 import profilePic from '../public/images/profilepic.png'
 import { useState } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
+import { faNewspaper, faEnvelope } from '@fortawesome/free-solid-svg-icons'
 
 const interests = ['Full-Stack Web Developement', 'Python Applications', 'Machine Learning']
+
+const socials = [
+  {
+    title: 'Github',
+    href: 'https://github.com/joetorsney',
+    icon: faGithub
+  },
+  {
+    title: 'LinkedIn',
+    href: 'https://www.linkedin.com/in/joseph-torsney-788345195/',
+    icon: faLinkedin
+  },
+  {
+    title: 'Email',
+    href: 'mailto:joetorsney@gmail.com',
+    icon: faEnvelope
+  },
+  {
+    title: 'CV',
+    href: 'https://drive.google.com/file/d/1fqYWBjRSPD3lsay0PG1pQsFN0MIR7dEi/view?usp=sharing',
+    icon: faNewspaper
+  }
+]
 
 const timelineItems = [
   {
@@ -45,7 +72,7 @@ export default function Home() {
   return (
     <Layout>
       <SEO title='Home'/>
-      <div className='flex flex-col gap-10 md:gap-20'>
+      <div className='flex flex-col gap-5 md:gap-10'>
         <div className='md:flex items-center gap-8 flex-row-reverse'>
           <div className='max-md:flex justify-center'>
             <div className='max-w-md max-md:w-1/2 relative aspect-square h-auto overflow-hidden border-0 border-transparent rounded-[40px]'>
@@ -60,10 +87,22 @@ export default function Home() {
               <br />
             </h1>
             <Typewriter text={interests[currentInterestIndex]} cursor={'▊'} delay={100} pause={2000} doneCallback={changeInterest} className='font-mono text-xl sm:text-2xl'></Typewriter>
+            <div className='py-4'>
+              <div className='flex items-center gap-4'>
+                {socials.map(({title, href, icon}) => {
+                  return <Link href={href}>
+                    <div className='flex items-center gap-2 hover:text-secondary transition-colors duration-75'>
+                      <FontAwesomeIcon icon={icon} className='fa-xl '/>
+                      <span className='text-lg sm:text-xl'>{title}</span>
+                    </div>
+                  </Link>
+                })}
+              </div>
+            </div>
           </div>
         </div>
         <div>
-          <h1 className='text-3xl text-secondary py-2 font-bold'>My Story</h1>
+          <h1 className='text-3xl text-secondary py-2 font-medium'>My Story</h1>
           <Timeline>
             {timelineItems.map((item, index) => (
               <Timeline.Item key={index}>
