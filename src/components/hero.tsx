@@ -34,12 +34,12 @@ const socials = [
 const Hero = () => {
     return <div className='md:flex items-center gap-8 flex-row-reverse'>
       <div className='max-md:flex justify-center'>
-        <div className='md:w-[250px] aspect-square h-auto overflow-hidden border-0 border-transparent rounded-[40px]'>
+        <div className='w-1/2 md:w-[250px] aspect-square h-auto overflow-hidden border-0 border-transparent rounded-[40px]'>
           <Image src={profilePic} alt='A picture of me' layout='responsive' />
         </div>
       </div>
       <div>
-        <h1 className='font-medium text-4xl text-secondary max-sm:pt-10 max-md:pt-20 py-2'><span>Hello, I&apos;m</span><span className='font-serif-italic'> Joseph Torsney</span></h1>
+        <h1 className='font-medium text-4xl text-secondary max-md:pt-10 py-2'><span>Hello, I&apos;m</span><span className='font-serif-italic'> Joseph Torsney</span></h1>
         <h1 className='text-xl sm:text-2xl py-2'>I am a Masters of Computer Science Graduate with 1-2 years professional experience.</h1>
         <h1 className='text-xl sm:text-2xl py-2'>
           I am primarily interested in
