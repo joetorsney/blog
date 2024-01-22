@@ -49,7 +49,7 @@ const Hero = () => {
         <div className='py-4'>
           <div className='flex items-center gap-4'>
             {socials.map(({ title, href, icon }) => {
-              return <Link href={href}>
+              return <Link key={title} href={href}>
                 <div className='flex items-center gap-2 hover:text-secondary transition-colors duration-75'>
                   <FontAwesomeIcon icon={icon} className='fa-xl ' />
                   <span className='text-lg sm:text-xl'>{title}</span>
