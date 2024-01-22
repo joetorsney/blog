@@ -8,19 +8,23 @@ enum direction {
 }
 
 interface TypewriterProps {
-    text: string,
+    texts: string[],
     cursor: string,
     delay: number,
     pause: number,
-    doneCallback: () => void,
     className?: string
 }
 
-const Typewriter = ({text, cursor, delay, pause, doneCallback, className}: TypewriterProps) => {
+const Typewriter = ({texts, cursor, delay, pause, className}: TypewriterProps) => {
     const [typingDirection, setTypingDirection] = useState(direction.Forward)
     const [isTyping, setIsTyping] = useState(true)
-    const [currentText, setCurrentText] = useState(text)
-    const [currentIndex, setCurrentIndex] = useState(0)
+    const [currentTextIndex, setCurrentTextIndex] = useState(0)
+    const [currentDisplay, setCurrentDisplay] = useState("")
+    const [currentDisplayIndex, setCurrentDisplayIndex] = useState(0)
+
+    const cycleText = () => {
+        setCurrentTextIndex((currentTextIndex + 1) % texts.length)
+    }
 
     /**
      * Handles pausing the typewriter to allow the user to read the text. Handles what to
@@ -30,7 +34,7 @@ const Typewriter = ({text, cursor, delay, pause, doneCallback, className}: Typew
      * @param pause The length of time to pause for.
      */
     const pauseTyping = (nextDirection: direction, nextIndex: number, pause: number) => {
-        setCurrentIndex(nextIndex); 
+        setCurrentDisplayIndex(nextIndex); 
         setTypingDirection(nextDirection)
         setIsTyping(false)
         setTimeout(() => setIsTyping(true), pause)
@@ -38,33 +42,33 @@ const Typewriter = ({text, cursor, delay, pause, doneCallback, className}: Typew
 
     useEffect(() => {
         //  If we are at the start or end of the text, pause
-        if (currentIndex > text.length) {
-            pauseTyping(direction.Backward, currentIndex - 1, pause);
+        if (currentDisplayIndex > texts[currentTextIndex].length) {
+            pauseTyping(direction.Backward, currentDisplayIndex - 1, pause);
             return
         }
         
-        if (currentIndex < 0) {
+        if (currentDisplayIndex < 0) {
             pauseTyping(direction.Forward, 0, delay)
-            doneCallback();
+            cycleText();
             return
         }
         
         // Otherwise, set the next text and index based on typing direction.
-        const nextText = text.slice(0, currentIndex)
-        setCurrentText(nextText)
+        const nextText = texts[currentTextIndex].slice(0, currentDisplayIndex)
+        setCurrentDisplay(nextText)
 
         if (typingDirection === direction.Forward && isTyping) {
-            setTimeout(() => setCurrentIndex(currentIndex + 1), delay)
+            setTimeout(() => setCurrentDisplayIndex(currentDisplayIndex + 1), delay)
         }
 
         if (typingDirection === direction.Backward && isTyping) {
-            setTimeout(() => setCurrentIndex(nextText.lastIndexOf(' ')), delay*2)
+            setTimeout(() => setCurrentDisplayIndex(nextText.lastIndexOf(' ')), delay*2)
         }
-    }, [currentIndex, isTyping])
+    }, [currentDisplayIndex, isTyping])
 
     return (
         <>
-            <span className={className}>{currentText}</span>
+            <span className={className}>{currentDisplay}</span>
             <span className={`${className + (!isTyping ? ' animate-blink' : '')}`}>{cursor}</span>
         </>
     )

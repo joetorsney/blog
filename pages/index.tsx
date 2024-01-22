@@ -6,10 +6,12 @@ import { SEO } from '../src/components/SEO'
 import { Timeline } from 'flowbite-react'
 
 import profilePic from '../public/images/profilepic.png'
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import { faNewspaper, faEnvelope } from '@fortawesome/free-solid-svg-icons'
+import Particles from '@tsparticles/react'
+import { ISourceOptions } from '@tsparticles/engine'
 
 const interests = ['Full-Stack Web Developement', 'Python Applications', 'Machine Learning']
 
@@ -64,62 +66,86 @@ const timelineItems = [
 ]
 
 export default function Home() {
-  const [currentInterestIndex, setCurrentInterestIndex] = useState(0)
-  const changeInterest = () => {
-    setCurrentInterestIndex((currentInterestIndex + 1) % interests.length)
-  }
+  const options: ISourceOptions = useMemo(
+    () => ({
+      fpsLimit: 120,
+      particles: {
+        links: {
+          enable: true
+        },
+        move: {
+          enable: true,
+          speed: 0.3
+        },
+        number: {
+          value: 100
+        },
+        opacity: {
+          value: { min: 0.3, max: 1 }
+        },
+        shape: {
+          type: ["circle"],
+        },
+      },
+      detectRetina: true,
+    }),
+    [],
+  );
 
   return (
-    <Layout>
-      <SEO title='Home'/>
-      <div className='flex flex-col gap-5 md:gap-10'>
-        <div className='md:flex items-center gap-8 flex-row-reverse'>
-          <div className='max-md:flex justify-center'>
-            <div className='max-w-md max-md:w-1/2 relative aspect-square h-auto overflow-hidden border-0 border-transparent rounded-[40px]'>
-              <Image src={profilePic} alt='A picture of me' layout='responsive'/>
+    <>
+      <Particles options={options} id="particles"></Particles>
+      <Layout>
+        <SEO title='Home' />
+        <div className='flex flex-col gap-5 md:gap-10'>
+          <div className='md:flex items-center gap-8 flex-row-reverse'>
+            <div className='max-md:flex justify-center'>
+              <div className='max-w-md max-md:w-1/2 relative aspect-square h-auto overflow-hidden border-0 border-transparent rounded-[40px]'>
+                <Image src={profilePic} alt='A picture of me' layout='responsive' />
+              </div>
             </div>
-          </div>
-          <div>
-            <h1 className='font-medium text-4xl text-secondary max-sm:pt-10 max-md:pt-20 py-2'><span>Hello, I&apos;m</span><span className='font-serif-italic'> Joseph Torsney</span></h1>
-            <h1 className='text-xl sm:text-2xl py-2'>I am a Masters of Computer Science Graduate with 1-2 years professional experience.</h1>
-            <h1 className='text-xl sm:text-2xl py-2'>
-              I am primarily interested in 
-              <br />
-            </h1>
-            <Typewriter text={interests[currentInterestIndex]} cursor={'▊'} delay={100} pause={2000} doneCallback={changeInterest} className='font-mono text-xl sm:text-2xl'></Typewriter>
-            <div className='py-4'>
-              <div className='flex items-center gap-4'>
-                {socials.map(({title, href, icon}) => {
-                  return <Link href={href}>
-                    <div className='flex items-center gap-2 hover:text-secondary transition-colors duration-75'>
-                      <FontAwesomeIcon icon={icon} className='fa-xl '/>
-                      <span className='text-lg sm:text-xl'>{title}</span>
-                    </div>
-                  </Link>
-                })}
+            <div>
+              <h1 className='font-medium text-4xl text-secondary max-sm:pt-10 max-md:pt-20 py-2'><span>Hello, I&apos;m</span><span className='font-serif-italic'> Joseph Torsney</span></h1>
+              <h1 className='text-xl sm:text-2xl py-2'>I am a Masters of Computer Science Graduate with 1-2 years professional experience.</h1>
+              <h1 className='text-xl sm:text-2xl py-2'>
+                I am primarily interested in
+                <br />
+              </h1>
+              <Typewriter texts={interests} cursor={'▊'} delay={100} pause={2000} className='font-mono text-xl sm:text-2xl'></Typewriter>
+              <div className='py-4'>
+                <div className='flex items-center gap-4'>
+                  {socials.map(({ title, href, icon }) => {
+                    return <Link href={href}>
+                      <div className='flex items-center gap-2 hover:text-secondary transition-colors duration-75'>
+                        <FontAwesomeIcon icon={icon} className='fa-xl ' />
+                        <span className='text-lg sm:text-xl'>{title}</span>
+                      </div>
+                    </Link>
+                  })}
+                </div>
               </div>
             </div>
           </div>
+          <div>
+            <h1 className='text-3xl text-secondary py-2 font-medium'>My Story</h1>
+            <Timeline>
+              {timelineItems.map((item, index) => (
+                <Timeline.Item key={index}>
+                  <Timeline.Point />
+                  <Timeline.Content>
+                    <Timeline.Time className='text-white font-bold py-1'>{item.time}</Timeline.Time>
+                    <Timeline.Body>
+                      <h3 className='text-white text-xl sm:text-2xl font-semibold py-1'>{item.title}</h3>
+                      {item.subtitle ? <h3 className='text-white text-lg font-semibold py-1'>{item.subtitle}</h3> : ''}
+                      <p className='text-white text-justify py-1'>{item.body}</p>
+                    </Timeline.Body>
+                  </Timeline.Content>
+                </Timeline.Item>
+              ))}
+            </Timeline>
+          </div>
         </div>
-        <div>
-          <h1 className='text-3xl text-secondary py-2 font-medium'>My Story</h1>
-          <Timeline>
-            {timelineItems.map((item, index) => (
-              <Timeline.Item key={index}>
-                <Timeline.Point />
-                <Timeline.Content>
-                  <Timeline.Time className='text-white font-bold py-1'>{item.time}</Timeline.Time>
-                  <Timeline.Body>
-                    <h3 className='text-white text-xl sm:text-2xl font-semibold py-1'>{item.title}</h3>
-                    {item.subtitle ? <h3 className='text-white text-lg font-semibold py-1'>{item.subtitle}</h3> : ''}
-                    <p className='text-white text-justify py-1'>{item.body}</p>
-                  </Timeline.Body>
-                </Timeline.Content>
-              </Timeline.Item>
-            ))}
-          </Timeline>
-        </div>
-      </div>
-    </Layout>
+      </Layout>
+    </>
   )
 }
