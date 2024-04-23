@@ -2,16 +2,22 @@ import { Timeline } from 'flowbite-react'
 
 const timelineItems = [
   {
-    time: '2018 - 2023',
-    title: 'The University of Sheffield',
-    subtitle: '1st (hons) MComp Computer Science with a Year in Industry',
-    body: 'I gained strong foundational knowledge in theoretical computer science, algorithms, and logic. I also gained practical experience in software engineering, database engineering, cryptography, and machine learning. My Masters\' thesis investigated the impact of speech data on advanced machine learning models for singing voice conversion.',
+    time: 'Current',
+    title: 'Lexical Labs',
+    subtitle: 'Full Stack Software Engineer',
+    body: "As a full stack software engineer at Lexical Labs, I am building data orchestration tools in Javascript and PostreSQL to enable the analysis of commercial contracts using Large Language Models (LLMs).",
   },
   {
     time: 'Summer 2023',
     title: 'CERN Summer Student Program',
     subtitle: 'Full Stack Web Developer',
     body: 'I joined the ALICE experiment as a Full Stack Web Developer, and delivered several features to the \'Bookkeeping\' web app used in the operation of the ALICE experiment. The app allows staff to communicate by writing \'Logs\'. I implemented feature where users could link Logs to a particular database entity. This involved adding a new table to the database to represent the many-to-many relationship, adding API endpoints to support the creation of Logs with the entity, displayed these on the front-end, and wrote integration tests. I am currently implementing a flexible data table component as an open source contributor. I published a report on my achievements during my placement which is available online the CERN document server.',
+  },
+  {
+    time: '2018 - 2023',
+    title: 'The University of Sheffield',
+    subtitle: '1st (hons) MComp Computer Science with a Year in Industry',
+    body: 'I gained strong foundational knowledge in theoretical computer science, algorithms, and logic. I also gained practical experience in software engineering, database engineering, cryptography, and machine learning. My Masters\' thesis investigated the impact of speech data on advanced machine learning models for singing voice conversion.',
   },
   {
     time: '2020-2022',
