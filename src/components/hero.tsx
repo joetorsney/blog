@@ -26,7 +26,7 @@ const socials = [
   },
   {
     title: 'CV',
-    href: 'https://drive.google.com/file/d/1fdaDsWBRcmaU6jlH5ydHC2RChFeWxN1X/view?usp=sharing',
+    href: 'https://drive.google.com/file/d/1Ygm8ITZAGCpf7MI3Ti7mT_-7_ABDINaH/view?usp=sharing',
     icon: faNewspaper
   }
 ]
